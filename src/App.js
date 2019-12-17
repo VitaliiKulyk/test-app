@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { getCurrentGeoLocation } from './modules/geo';
+import GeoInfoConponent from './components/GeoInfo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [geoLocation, setGeoLocation] = useState();
+
+	useEffect(() => {
+		if (!geoLocation) {
+			getLocation();
+		}
+	});
+
+	async function getLocation() {
+		try {
+			var { latitude, longitude } = await getCurrentGeoLocation();
+			setGeoLocation({ latitude, longitude });
+		} catch (error) {
+			setGeoLocation({ error: error.message });
+		}
+	}
+
+	return (
+		<div className="app">
+			<GeoInfoConponent {...geoLocation} />
+		</div>
+	);
 }
 
 export default App;
