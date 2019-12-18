@@ -71,7 +71,7 @@ function App() {
 						/>
 						{Number.isFinite(changedTemp) && (
 							<Button onClick={() => setChangedTemp(null)} color="primary">
-								Reset
+								Reset to real data
 							</Button>
 						)}
 					</div>
