@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function getWeatherByLocation({ latitude, longitude }) {
-	var response = await axios.get('http://api.openweathermap.org/data/2.5/weather', {
+	var response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
 		params: {
 			lat: latitude,
 			lon: longitude,
