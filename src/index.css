@@ -1,6 +1,7 @@
 .app {
 	min-height: calc(100vh - 16px);
 	display: flex;
+	transition: 1.5s ease;
 }
 
 .geoInfo {
@@ -9,6 +10,7 @@
 	margin: 5px;
 	display: flex;
 	background-color: #dedede;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
 }
 
 .geoInfo .error {
@@ -51,4 +53,15 @@
 .weatherInfo .stats .tempText {
 	font-size: 40px;
 	font-weight: bold;
+}
+
+.sliderContainer {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 300px;
+	top: calc(50% + 200px);
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
