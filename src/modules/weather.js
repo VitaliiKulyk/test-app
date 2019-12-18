@@ -6,7 +6,7 @@ export async function getWeatherByLocation({ latitude, longitude }) {
 			lat: latitude,
 			lon: longitude,
 			units: 'metric',
-			appid: '3b7c3f5fb36460f5fc7eee2b601950ff'
+			appid: '46a990336fddc7a7d9a1dc020c179d83'
 		}
 	});
 	var { data } = response;
